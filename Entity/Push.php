@@ -56,12 +56,12 @@ class Push extends FormEntity
     /**
      * @var string
      */
-    private $tickerText;
+    private $tickertext;
     
     /**
      * @var string
      */
-    private $pageTo;
+    private $pageto;
 
     /**
      * @var string
@@ -151,14 +151,17 @@ class Push extends FormEntity
         $builder->createField('message', 'text')
             ->build();
         
-//         $builder->createField('title', 'string')
-//             ->build();
+        $builder->createField('title', 'string')
+            ->build();
         
-//         $builder->createField('subtitle', 'string')
-//             ->build();
+        $builder->createField('subtitle', 'string')
+            ->build();
         
-//         $builder->createField('tickerText', 'text')
-//             ->build();
+        $builder->createField('tickertext', 'text')
+            ->build();
+        
+        $builder->createField('pageto', 'text')
+            ->build();
 
         $builder->createField('pushType', 'text')
             ->columnName('push_type')
@@ -334,7 +337,7 @@ class Push extends FormEntity
     public function setTitle($title)
     {
     	$this->isChanged('title', $title);
-    	$this->description = $title;
+    	$this->title = $title;
     }
     
     /**
@@ -357,35 +360,35 @@ class Push extends FormEntity
     /**
      * @return string
      */
-    public function getTickerText()
+    public function getTickertext()
     {
-    	return $this->tickerText;
+    	return $this->tickertext;
     }
     
     /**
      * @param string $tickerText
      */
-    public function setTickerText($tickerText)
+    public function setTickertext($tickertext)
     {
-    	$this->isChanged('tickerText', $tickerText);
-    	$this->tickerText = $tickerText;
+    	$this->isChanged('tickertext', $tickertext);
+    	$this->tickertext = $tickertext;
     }
     
     /**
      * @return string
      */
-    public function getPageTo()
+    public function getPageto()
     {
-    	return $this->pageTo;
+    	return $this->pageto;
     }
     
     /**
      * @param string $pageTo
      */
-    public function setPageTo($pageTo)
+    public function setPageto($pageto)
     {
-    	$this->isChanged('pageTo', $pageTo);
-    	$this->pageTo = $pageTo;
+    	$this->isChanged('pageto', $pageto);
+    	$this->pageto = $pageto;
     }
 
     /**

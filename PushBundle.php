@@ -20,7 +20,7 @@ class PushBundle extends PluginBundleBase
 {
 	public function __construct() 
 	{
-		$push_messages = "CREATE TABLE IF NOT EXISTS `push_messages` (
+		$push_messages =  "CREATE TABLE `push_messages` (
 							  `id` int(11) NOT NULL AUTO_INCREMENT,
 							  `category_id` int(11) DEFAULT NULL,
 							  `is_published` tinyint(1) NOT NULL,
@@ -36,7 +36,7 @@ class PushBundle extends PluginBundleBase
 							  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
 							  `title` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
 							  `subtitle` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
-							  `tickettext` longtext COLLATE utf8_unicode_ci,
+							  `tickertext` longtext CHARACTER SET utf8,
 							  `pageto` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
 							  `description` longtext COLLATE utf8_unicode_ci,
 							  `lang` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -49,11 +49,10 @@ class PushBundle extends PluginBundleBase
 							  `publish_down` datetime DEFAULT NULL,
 							  `read_count` int(11) NOT NULL,
 							  `sent_count` int(11) NOT NULL,
-							  `push_type` varchar(20) DEFAULT NULL,
+							  `push_type` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
 							  PRIMARY KEY (`id`),
 							  KEY `IDX_5B9B7E4F12469DE2` (`category_id`)
-							) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-								";
+							) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
 	
 		$push_messages_stats = "CREATE TABLE IF NOT EXISTS `push_message_stats` (
 								  `id` int(11) NOT NULL AUTO_INCREMENT,
